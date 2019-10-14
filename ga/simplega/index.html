@@ -1,0 +1,1086 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>simple GA algorithm - Artificial Intelligence Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#simple-genetic-algorithm-problem" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Artificial Intelligence Tutorials" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Artificial Intelligence Tutorials
+            </span>
+            <span class="md-header-nav__topic">
+              
+                simple GA algorithm
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." title="Artificial Intelligence" class="md-tabs__link">
+          Artificial Intelligence
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../slides/introml/" title="Presentations" class="md-tabs__link">
+          Presentations
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Genetic Algorithms" class="md-tabs__link md-tabs__link--active">
+          Genetic Algorithms
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../nn/" title="Neural Networks" class="md-tabs__link">
+          Neural Networks
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../ne/" title="Neuro Evolution" class="md-tabs__link">
+          Neuro Evolution
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Artificial Intelligence Tutorials" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Artificial Intelligence Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Artificial Intelligence
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Artificial Intelligence
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="overview" class="md-nav__link">
+      overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/history/" title="History" class="md-nav__link">
+      History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/es/" title="Expert systems" class="md-nav__link">
+      Expert systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/fl/" title="Fuzzy Logic" class="md-nav__link">
+      Fuzzy Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ga/" title="Genetic Algorithms" class="md-nav__link">
+      Genetic Algorithms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ml/" title="Machine Learning" class="md-nav__link">
+      Machine Learning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/nn/" title="Neural Networks" class="md-nav__link">
+      Neural Networks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ne/" title="Neuro Evolution" class="md-nav__link">
+      Neuro Evolution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/cheat/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Presentations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Presentations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slides/introml/" title="Intro to machine learning" class="md-nav__link">
+      Intro to machine learning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slides/nn/" title="Neural Network" class="md-nav__link">
+      Neural Network
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slides/ne/" title="Neuro-Evolution" class="md-nav__link">
+      Neuro-Evolution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Genetic Algorithms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Genetic Algorithms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        simple GA algorithm
+      </label>
+    
+    <a href="./" title="simple GA algorithm" class="md-nav__link md-nav__link--active">
+      simple GA algorithm
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#libraries" title="Libraries" class="md-nav__link">
+    Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ga-parameters" title="GA Parameters" class="md-nav__link">
+    GA Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chromosome" title="Chromosome" class="md-nav__link">
+    Chromosome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#population" title="Population" class="md-nav__link">
+    Population
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genetic-algorithm-core" title="Genetic Algorithm Core" class="md-nav__link">
+    Genetic Algorithm Core
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolve-the-population" title="Evolve the population" class="md-nav__link">
+    Evolve the population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-over-the-population" title="Cross over the population" class="md-nav__link">
+    Cross over the population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutate-the-population" title="Mutate the population" class="md-nav__link">
+    Mutate the population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-crossover-and-mutation" title="Selection, Crossover and Mutation" class="md-nav__link">
+    Selection, Crossover and Mutation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-program" title="Main program" class="md-nav__link">
+    Main program
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pyeasyga/" title="pyeasyga" class="md-nav__link">
+      pyeasyga
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../queens.md" title="8 queens" class="md-nav__link">
+      8 queens
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../knapsack.md" title="Knapsack" class="md-nav__link">
+      Knapsack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../knapsackmd.md" title="Knapsack multi dimension" class="md-nav__link">
+      Knapsack multi dimension
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tsp.md" title="Travel salesman problem" class="md-nav__link">
+      Travel salesman problem
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Neural Networks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Neural Networks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nn/" title="overview" class="md-nav__link">
+      overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Neuro Evolution
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Neuro Evolution
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ne/" title="overview" class="md-nav__link">
+      overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#libraries" title="Libraries" class="md-nav__link">
+    Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ga-parameters" title="GA Parameters" class="md-nav__link">
+    GA Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chromosome" title="Chromosome" class="md-nav__link">
+    Chromosome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#population" title="Population" class="md-nav__link">
+    Population
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genetic-algorithm-core" title="Genetic Algorithm Core" class="md-nav__link">
+    Genetic Algorithm Core
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolve-the-population" title="Evolve the population" class="md-nav__link">
+    Evolve the population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-over-the-population" title="Cross over the population" class="md-nav__link">
+    Cross over the population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutate-the-population" title="Mutate the population" class="md-nav__link">
+    Mutate the population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-crossover-and-mutation" title="Selection, Crossover and Mutation" class="md-nav__link">
+    Selection, Crossover and Mutation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-program" title="Main program" class="md-nav__link">
+    Main program
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="simple-genetic-algorithm-problem">Simple Genetic Algorithm problem<a class="headerlink" href="#simple-genetic-algorithm-problem" title="Permanent link">&para;</a></h1>
+<p>In this first problem, we will apply the GA of Holland without using almost any libraries, just raw python.</p>
+<p>We will try to achieve a <strong>target individual</strong> known from the start.</p>
+<h2 id="libraries">Libraries<a class="headerlink" href="#libraries" title="Permanent link">&para;</a></h2>
+<p>In this problem we will use just the random library
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div></p>
+<h2 id="ga-parameters">GA Parameters<a class="headerlink" href="#ga-parameters" title="Permanent link">&para;</a></h2>
+<p>Every GA problem is based on some mandatory parameters such as <strong>Number of genes</strong>, <strong>Population size</strong>, <strong>Mutation rate</strong> and <strong>Crossover rate</strong>
+<div class="codehilite"><pre><span></span><span class="n">NB_GENES</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">POPULATION_SIZE</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">MUTATION_RATE</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">CROSSING_RATE</span> <span class="o">=</span> <span class="mf">0.8</span>
+</pre></div></p>
+<p>For this problem we need additional parameters for the selection algorithm and our Target chromosome
+<div class="codehilite"><pre><span></span><span class="n">TARGET_CHROMOSOME</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">TOURNAMENT_SELECTION_SIZE</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div></p>
+<h2 id="chromosome">Chromosome<a class="headerlink" href="#chromosome" title="Permanent link">&para;</a></h2>
+<p>We need to model our Chromosome (individual) by a class, that contain the <strong>genes</strong> and the <strong>fitness</strong>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Chromosome</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;Chromosome Init&#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NB_GENES</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">genes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="sd">&#39;&#39;&#39;Chromosome Fitness&#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">get_fitness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># this init is very important</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NB_GENES</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">genes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">TARGET_CHROMOSOME</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fitness</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fitness</span>
+
+    <span class="sd">&#39;&#39;&#39;Chromosome Value&#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">get_genes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">genes</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">genes</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+</pre></div></p>
+<h2 id="population">Population<a class="headerlink" href="#population" title="Permanent link">&para;</a></h2>
+<p>After definig our chromosome, we need to define our Population class. 
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Population</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;Population Init&#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chromosomes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chromosomes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">Chromosome</span><span class="p">()</span> <span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="sd">&#39;&#39;&#39;Get All Population Chromosomes&#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">get_chromosomes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">chromosomes</span>
+
+    <span class="sd">&#39;&#39;&#39;Display the population summary&#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">print_population</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gen_number</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">------------------------------------------------------------------&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Generation #&quot;</span><span class="p">,</span> <span class="n">gen_number</span><span class="p">,</span> <span class="s2">&quot;| Fittest chromosome fitness:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_fitness</span><span class="p">())</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Target chromosome&quot;</span><span class="p">,</span> <span class="n">TARGET_CHROMOSOME</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------------------------&quot;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">():</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Chromosome #&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot; :&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot;| Fitness&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">get_fitness</span><span class="p">())</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div></p>
+<h2 id="genetic-algorithm-core">Genetic Algorithm Core<a class="headerlink" href="#genetic-algorithm-core" title="Permanent link">&para;</a></h2>
+<p>the kernel of the genetic algorithm consist of selecting the good individual, making the crossing and mutate them in order to produce a better generation. All of that goes in our next class called <strong>GeneticAlgorithm</strong>, contains only static methods, because we don't need an object of GeneticAlgorithm Type.</p>
+<h3 id="evolve-the-population">Evolve the population<a class="headerlink" href="#evolve-the-population" title="Permanent link">&para;</a></h3>
+<p>In this method we will evolve our generation by making crossover and the mutation over the population. In the cross we will make the selection. <br />
+<div class="codehilite"><pre><span></span><span class="sd">&#39;&#39;&#39;Population evolution Cross Over --&gt; Mutation&#39;&#39;&#39;</span>
+<span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">evol</span><span class="p">(</span><span class="n">pop</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Crossover and Mutation Trace:&quot;</span><span class="p">)</span>
+    <span class="n">pop</span> <span class="o">=</span> <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">crossover_population</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span>
+    <span class="n">pop</span> <span class="o">=</span> <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">mutate_population</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pop</span>
+</pre></div></p>
+<h3 id="cross-over-the-population">Cross over the population<a class="headerlink" href="#cross-over-the-population" title="Permanent link">&para;</a></h3>
+<p>To do the crossing over the population, we must use our selection technique(Tournament)<br />
+<div class="codehilite"><pre><span></span><span class="sd">&#39;&#39;&#39;Cross Over Population&#39;&#39;&#39;</span>
+<span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">crossover_population</span><span class="p">(</span><span class="n">pop</span><span class="p">):</span>
+    <span class="n">crossover_pop</span> <span class="o">=</span> <span class="n">Population</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1">#&#39;&#39;&#39;Keep The Fittests Chromosomes&#39;&#39;&#39;</span>
+    <span class="c1">#for i in range(NUMBER_OF_ELITE_CHROMOSOMES):</span>
+    <span class="c1">#    crossover_pop.get_chromosomes().append(pop.get_chromosomes()[i])</span>
+
+
+    <span class="c1">#i = NUMBER_OF_ELITE_CHROMOSOMES</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">POPULATION_SIZE</span><span class="p">:</span>
+        <span class="n">chromosome1</span> <span class="o">=</span> <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">select_tournament_population</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">chromosome2</span> <span class="o">=</span> <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">select_tournament_population</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">child1</span><span class="p">,</span> <span class="n">child2</span> <span class="o">=</span> <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">crossover_chromosomes</span><span class="p">(</span><span class="n">chromosome1</span><span class="p">,</span> <span class="n">chromosome2</span><span class="p">)</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;CrossOver &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;#  parent1: &quot;</span><span class="p">,</span><span class="n">chromosome1</span><span class="o">.</span><span class="n">get_genes</span><span class="p">(),</span> <span class="s2">&quot;| parent2: &quot;</span><span class="p">,</span><span class="n">chromosome2</span><span class="o">.</span><span class="n">get_genes</span><span class="p">(),</span> <span class="s2">&quot;| crossover result chromosome :&quot;</span><span class="p">,</span> <span class="n">child1</span><span class="o">.</span><span class="n">get_genes</span><span class="p">())</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;CrossOver &quot;</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;#  parent1: &quot;</span><span class="p">,</span><span class="n">chromosome1</span><span class="o">.</span><span class="n">get_genes</span><span class="p">(),</span> <span class="s2">&quot;| parent2: &quot;</span><span class="p">,</span><span class="n">chromosome2</span><span class="o">.</span><span class="n">get_genes</span><span class="p">(),</span> <span class="s2">&quot;| crossover result chromosome :&quot;</span><span class="p">,</span> <span class="n">child2</span><span class="o">.</span><span class="n">get_genes</span><span class="p">())</span>
+
+        <span class="n">crossover_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
+        <span class="n">crossover_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># make sure here to manage the size if you use the elitism approach</span>
+    <span class="k">return</span> <span class="n">crossover_pop</span>
+</pre></div></p>
+<h3 id="mutate-the-population">Mutate the population<a class="headerlink" href="#mutate-the-population" title="Permanent link">&para;</a></h3>
+<p>We need to do our mutation over the population
+<div class="codehilite"><pre><span></span><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">mutate_population</span><span class="p">(</span><span class="n">pop</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">POPULATION_SIZE</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mutation&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot; #  From&quot;</span><span class="p">,</span> <span class="n">pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;   &#39;</span><span class="p">)</span>
+        <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">mutate_chromosome</span><span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;To&quot;</span><span class="p">,</span> <span class="n">pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">pop</span> 
+</pre></div></p>
+<h3 id="selection-crossover-and-mutation">Selection, Crossover and Mutation<a class="headerlink" href="#selection-crossover-and-mutation" title="Permanent link">&para;</a></h3>
+<p>Those are the main operation of the genetic algorithm.
+<div class="codehilite"><pre><span></span><span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">crossover_chromosomes</span><span class="p">(</span><span class="n">chromosome1</span><span class="p">,</span> <span class="n">chromosome2</span><span class="p">):</span>
+
+
+    <span class="n">child1</span> <span class="o">=</span> <span class="n">Chromosome</span><span class="p">()</span>
+    <span class="n">child2</span> <span class="o">=</span> <span class="n">Chromosome</span><span class="p">()</span>
+
+    <span class="sd">&#39;&#39;&#39;One Point Cross Over&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">CROSSING_RATE</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">NB_GENES</span><span class="p">)</span>
+        <span class="n">child1</span><span class="o">.</span><span class="n">genes</span> <span class="o">=</span> <span class="n">chromosome1</span><span class="o">.</span><span class="n">get_genes</span><span class="p">()[:</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">chromosome2</span><span class="o">.</span><span class="n">get_genes</span><span class="p">()[</span><span class="n">index</span><span class="p">:]</span>
+        <span class="n">child2</span><span class="o">.</span><span class="n">genes</span> <span class="o">=</span> <span class="n">chromosome2</span><span class="o">.</span><span class="n">get_genes</span><span class="p">()[:</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">chromosome1</span><span class="o">.</span><span class="n">get_genes</span><span class="p">()[</span><span class="n">index</span><span class="p">:]</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">child1</span> <span class="o">=</span> <span class="n">chromosome1</span>
+        <span class="n">child2</span> <span class="o">=</span> <span class="n">chromosome2</span>
+
+    <span class="k">return</span> <span class="n">child1</span><span class="p">,</span> <span class="n">child2</span>
+
+<span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">mutate_chromosome</span><span class="p">(</span><span class="n">chromosome</span><span class="p">):</span>
+    <span class="n">random_bit_position</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">NB_GENES</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">chromosome</span><span class="o">.</span><span class="n">get_genes</span><span class="p">()[</span><span class="n">random_bit_position</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">chromosome</span><span class="o">.</span><span class="n">get_genes</span><span class="p">()[</span><span class="n">random_bit_position</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">chromosome</span><span class="o">.</span><span class="n">get_genes</span><span class="p">()[</span><span class="n">random_bit_position</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nd">@staticmethod</span>
+<span class="k">def</span> <span class="nf">select_tournament_population</span><span class="p">(</span><span class="n">pop</span><span class="p">):</span>
+    <span class="n">tournament_pop</span> <span class="o">=</span> <span class="n">Population</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">TOURNAMENT_SELECTION_SIZE</span> <span class="p">:</span>
+        <span class="n">tournament_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">POPULATION_SIZE</span><span class="p">)])</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">tournament_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get_fitness</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tournament_pop</span>
+</pre></div></p>
+<h2 id="main-program">Main program<a class="headerlink" href="#main-program" title="Permanent link">&para;</a></h2>
+<p>After definig all our classes and methods, we will run our main program
+<div class="codehilite"><pre><span></span><span class="n">generation_number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">MAX_FITNESS</span> <span class="o">=</span> <span class="n">TARGET_CHROMOSOME</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span> <span class="c1"># max fitness equal to the length of our target chromosome</span>
+<span class="n">population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">(</span><span class="n">POPULATION_SIZE</span><span class="p">)</span>
+<span class="n">population</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get_fitness</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">population</span><span class="o">.</span><span class="n">print_population</span><span class="p">(</span><span class="n">generation_number</span><span class="p">)</span>
+
+<span class="n">generation_number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">population</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_fitness</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">MAX_FITNESS</span> <span class="p">:</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">evol</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+    <span class="n">population</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get_fitness</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">population</span><span class="o">.</span><span class="n">print_population</span><span class="p">(</span><span class="n">generation_number</span><span class="p">)</span>
+    <span class="n">generation_number</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../slides/ne/" title="Neuro-Evolution" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Neuro-Evolution
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../pyeasyga/" title="pyeasyga" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                pyeasyga
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 - 2019 Arous Najet - Rayen Mhamdi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../script.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
