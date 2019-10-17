@@ -36,7 +36,7 @@
     
     
       
-        <title>pyeasyga - Artificial Intelligence Tutorials</title>
+        <title>8 queens - Artificial Intelligence Tutorials</title>
       
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#genetic-algorithm-library-pyeasyga" tabindex="1" class="md-skip">
+      <a href="#8-queens-problem" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -101,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                pyeasyga
+                8 queens
               
             </span>
           
@@ -470,6 +470,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../pyeasyga/" title="pyeasyga" class="md-nav__link">
+      pyeasyga
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -481,11 +493,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        pyeasyga
+        8 queens
       </label>
     
-    <a href="./" title="pyeasyga" class="md-nav__link md-nav__link--active">
-      pyeasyga
+    <a href="./" title="8 queens" class="md-nav__link md-nav__link--active">
+      8 queens
     </a>
     
       
@@ -499,50 +511,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-the-modules" title="Import the modules" class="md-nav__link">
-    Import the modules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-your-data-and-init-the-ga-only-data-is-mandatory" title="Setup your data and init the GA (Only data is mandatory)" class="md-nav__link">
-    Setup your data and init the GA (Only data is mandatory)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-the-individual-optional" title="Create the individual (Optional)" class="md-nav__link">
-    Create the individual (Optional)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genetic-algorithms-operations-crossover-mutate-selection-optional" title="Genetic Algorithm’s operations (crossover, mutate, selection) (Optional)" class="md-nav__link">
-    Genetic Algorithm’s operations (crossover, mutate, selection) (Optional)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#define-the-fitness-function-mandatory" title="Define the Fitness function (Mandatory)" class="md-nav__link">
-    Define the Fitness function (Mandatory)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-the-ga-program" title="Run the GA program" class="md-nav__link">
-    Run the GA program
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
   </a>
   
 </li>
@@ -555,18 +525,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../queens/" title="8 queens" class="md-nav__link">
-      8 queens
-    </a>
   </li>
 
         
@@ -704,50 +662,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-the-modules" title="Import the modules" class="md-nav__link">
-    Import the modules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-your-data-and-init-the-ga-only-data-is-mandatory" title="Setup your data and init the GA (Only data is mandatory)" class="md-nav__link">
-    Setup your data and init the GA (Only data is mandatory)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-the-individual-optional" title="Create the individual (Optional)" class="md-nav__link">
-    Create the individual (Optional)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genetic-algorithms-operations-crossover-mutate-selection-optional" title="Genetic Algorithm’s operations (crossover, mutate, selection) (Optional)" class="md-nav__link">
-    Genetic Algorithm’s operations (crossover, mutate, selection) (Optional)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#define-the-fitness-function-mandatory" title="Define the Fitness function (Mandatory)" class="md-nav__link">
-    Define the Fitness function (Mandatory)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-the-ga-program" title="Run the GA program" class="md-nav__link">
-    Run the GA program
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
   </a>
   
 </li>
@@ -769,99 +685,111 @@
               
                 
                 
-                <h1 id="genetic-algorithm-library-pyeasyga">Genetic Algorithm Library : Pyeasyga<a class="headerlink" href="#genetic-algorithm-library-pyeasyga" title="Permanent link">&para;</a></h1>
-<p>A simple and easy-to-use implementation of a Genetic Algorithm library in Python.</p>
-<p>pyeasyga provides a simple interface to the power of Genetic Algorithms (GAs). You don’t have to have expert GA knowledge in order to use it.</p>
-<ul>
-<li>Homepage: <a href="https://github.com/remiomosowon/pyeasyga">https://github.com/remiomosowon/pyeasyga</a></li>
-<li>PyPI: <a href="https://pypi.python.org/pypi/pyeasyga">https://pypi.python.org/pypi/pyeasyga</a></li>
-<li>Documentation: <a href="http://pyeasyga.readthedocs.org">http://pyeasyga.readthedocs.org</a>.</li>
-</ul>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>At the command line, simply run:
-<div class="codehilite"><pre><span></span>$ pip install pyeasyga
-</pre></div></p>
-<h2 id="import-the-modules">Import the modules<a class="headerlink" href="#import-the-modules" title="Permanent link">&para;</a></h2>
-<p>At the command line, simply run:
+                <h1 id="8-queens-problem">8 Queens Problem<a class="headerlink" href="#8-queens-problem" title="Permanent link">&para;</a></h1>
+<p>The eight queens problem is the problem of placing eight queens on an 8×8 chessboard such that none of them attack one another (no two are in the same row, column, or diagonal). More generally, the n queens problem places n queens on an n×n chessboard. </p>
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">pyeasyga.pyeasyga</span> <span class="kn">import</span> <span class="n">GeneticAlgorithm</span>
-</pre></div></p>
-<h2 id="setup-your-data-and-init-the-ga-only-data-is-mandatory">Setup your data and init the GA (Only data is mandatory)<a class="headerlink" href="#setup-your-data-and-init-the-ga-only-data-is-mandatory" title="Permanent link">&para;</a></h2>
-<p>setup data and initialise the GeneticAlgorithm class with the required data parameter, and all or some of the optional parameters
-<div class="codehilite"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">35</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;kiwi&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)]</span>
+<span class="kn">from</span> <span class="nn">pyeasyga</span> <span class="kn">import</span> <span class="n">pyeasyga</span>
 
-<span class="c1">#ga = GeneticAlgorithm(data, 20, 50, 0.8, 0.2, True, True)</span>
-<span class="c1">#ga = GeneticAlgorithm(data)</span>
-<span class="n">ga</span> <span class="o">=</span> <span class="n">GeneticAlgorithm</span><span class="p">(</span>
-    <span class="n">data</span><span class="p">,</span>
-    <span class="n">population_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-    <span class="n">generations</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-    <span class="n">crossover_probability</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-    <span class="n">mutation_probability</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">elitism</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">maximise_fitness</span><span class="o">=</span><span class="bp">True</span>
-<span class="p">)</span>
-</pre></div></p>
-<h2 id="create-the-individual-optional">Create the individual (Optional)<a class="headerlink" href="#create-the-individual-optional" title="Permanent link">&para;</a></h2>
-<p>Optionally, define a function to create a representation of a candidate solution (an individual in GA speak). This function should take in the data defined in step 1. as a parameter.</p>
-<p>Set the Genetic Algorithm’s create_individual attribute to your defined function
-<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">create_individual</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">individual</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">individual</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1"># setup seed data</span>
+<span class="n">seed_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="c1"># initialise the GA</span>
+<span class="n">ga</span> <span class="o">=</span> <span class="n">pyeasyga</span><span class="o">.</span><span class="n">GeneticAlgorithm</span><span class="p">(</span><span class="n">seed_data</span><span class="p">,</span>
+                            <span class="n">population_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                            <span class="n">generations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                            <span class="n">crossover_probability</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+                            <span class="n">mutation_probability</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                            <span class="n">elitism</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                            <span class="n">maximise_fitness</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c1"># define and set function to create a candidate solution representation</span>
+<span class="k">def</span> <span class="nf">create_individual</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">individual</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:]</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">individual</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">individual</span>
 
 <span class="n">ga</span><span class="o">.</span><span class="n">create_individual</span> <span class="o">=</span> <span class="n">create_individual</span>
-</pre></div></p>
-<h2 id="genetic-algorithms-operations-crossover-mutate-selection-optional">Genetic Algorithm’s operations (crossover, mutate, selection) (Optional)<a class="headerlink" href="#genetic-algorithms-operations-crossover-mutate-selection-optional" title="Permanent link">&para;</a></h2>
-<p>Optionally, define and set functions for the Genetic Algorithm’s genetic operators (i.e. crossover, mutate, selection)
-<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">parent_1</span><span class="p">,</span> <span class="n">parent_2</span><span class="p">):</span>
+
+<span class="c1"># One Point cross with correction</span>
+<span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">parent_1</span><span class="p">,</span> <span class="n">parent_2</span><span class="p">):</span>
     <span class="n">crossover_index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parent_1</span><span class="p">))</span>
-    <span class="n">child_1</span> <span class="o">=</span> <span class="n">parent_1</span><span class="p">[:</span><span class="n">crossover_index</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent_2</span><span class="p">[</span><span class="n">crossover_index</span><span class="p">:]</span>
-    <span class="n">child_2</span> <span class="o">=</span> <span class="n">parent_2</span><span class="p">[:</span><span class="n">crossover_index</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent_1</span><span class="p">[</span><span class="n">crossover_index</span><span class="p">:]</span>
+    <span class="n">child_1a</span> <span class="o">=</span> <span class="n">parent_1</span><span class="p">[:</span><span class="n">crossover_index</span><span class="p">]</span>
+    <span class="n">child_1b</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">parent_2</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">child_1a</span><span class="p">]</span>
+    <span class="n">child_1</span> <span class="o">=</span> <span class="n">child_1a</span> <span class="o">+</span> <span class="n">child_1b</span>
+
+    <span class="n">child_2a</span> <span class="o">=</span> <span class="n">parent_2</span><span class="p">[</span><span class="n">crossover_index</span><span class="p">:]</span>
+    <span class="n">child_2b</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">parent_1</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">child_2a</span><span class="p">]</span>
+    <span class="n">child_2</span> <span class="o">=</span> <span class="n">child_2a</span> <span class="o">+</span> <span class="n">child_2b</span>
+
     <span class="k">return</span> <span class="n">child_1</span><span class="p">,</span> <span class="n">child_2</span>
 
 <span class="n">ga</span><span class="o">.</span><span class="n">crossover_function</span> <span class="o">=</span> <span class="n">crossover</span>
 
-
+<span class="c1"># swap Mutation</span>
 <span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">individual</span><span class="p">):</span>
-    <span class="n">mutate_index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">individual</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">individual</span><span class="p">[</span><span class="n">mutate_index</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">individual</span><span class="p">[</span><span class="n">mutate_index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">individual</span><span class="p">[</span><span class="n">mutate_index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">mutate_index1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">individual</span><span class="p">))</span>
+    <span class="n">mutate_index2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">individual</span><span class="p">))</span>
+    <span class="n">individual</span><span class="p">[</span><span class="n">mutate_index1</span><span class="p">],</span> <span class="n">individual</span><span class="p">[</span><span class="n">mutate_index2</span><span class="p">]</span> <span class="o">=</span> <span class="n">individual</span><span class="p">[</span><span class="n">mutate_index2</span><span class="p">],</span> <span class="n">individual</span><span class="p">[</span><span class="n">mutate_index1</span><span class="p">]</span>
 
 <span class="n">ga</span><span class="o">.</span><span class="n">mutate_function</span> <span class="o">=</span> <span class="n">mutate</span>
 
-
+<span class="c1"># define and set the GA&#39;s selection operation</span>
 <span class="k">def</span> <span class="nf">selection</span><span class="p">(</span><span class="n">population</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
 
 <span class="n">ga</span><span class="o">.</span><span class="n">selection_function</span> <span class="o">=</span> <span class="n">selection</span>
-</pre></div></p>
-<h2 id="define-the-fitness-function-mandatory">Define the Fitness function (Mandatory)<a class="headerlink" href="#define-the-fitness-function-mandatory" title="Permanent link">&para;</a></h2>
-<p>Define a fitness function for the Genetic Algorithm. The function should take two parameters: a candidate solution representation (an individual in GA speak), and the data that is used to help determine the individual’s fitness</p>
-<p>Set the Genetic Algorithm’s fitness_function attribute to your defined fitness function</p>
-<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">fitness</span> <span class="p">(</span><span class="n">individual</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="n">fitness</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">if</span> <span class="n">individual</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">selected</span><span class="p">,</span> <span class="p">(</span><span class="n">fruit</span><span class="p">,</span> <span class="n">profit</span><span class="p">))</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">individual</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">selected</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-                <span class="n">fitness</span> <span class="o">+=</span> <span class="n">profit</span>
-    <span class="k">return</span> <span class="n">fitness</span>
 
-<span class="n">ga</span><span class="o">.</span><span class="n">fitness_function</span> <span class="o">=</span> <span class="n">fitness</span>
+<span class="c1"># define a fitness function</span>
+<span class="k">def</span> <span class="nf">fitness</span> <span class="p">(</span><span class="n">individual</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">collisions</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">individual</span><span class="p">:</span>
+        <span class="n">item_index</span> <span class="o">=</span> <span class="n">individual</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">individual</span><span class="p">:</span>
+            <span class="n">elem_index</span> <span class="o">=</span> <span class="n">individual</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">item_index</span> <span class="o">!=</span> <span class="n">elem_index</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="o">-</span> <span class="p">(</span><span class="n">elem_index</span> <span class="o">-</span> <span class="n">item_index</span><span class="p">)</span> <span class="o">==</span> <span class="n">elem</span> \
+                    <span class="ow">or</span> <span class="p">(</span><span class="n">elem_index</span> <span class="o">-</span> <span class="n">item_index</span><span class="p">)</span> <span class="o">+</span> <span class="n">item</span> <span class="o">==</span> <span class="n">elem</span><span class="p">:</span>
+                    <span class="n">collisions</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">collisions</span>
+
+<span class="n">ga</span><span class="o">.</span><span class="n">fitness_function</span> <span class="o">=</span> <span class="n">fitness</span>       <span class="c1"># set the GA&#39;s fitness function</span>
+<span class="n">ga</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>                            <span class="c1"># run the GA</span>
+
+<span class="c1"># function to print out chess board with queens placed in position</span>
+<span class="k">def</span> <span class="nf">print_board</span><span class="p">(</span><span class="n">board_representation</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">print_x_in_row</span><span class="p">(</span><span class="n">row_length</span><span class="p">,</span> <span class="n">x_position</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_length</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">|&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_length</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">x_position</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;  {}  |&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;     |&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">print_board_bottom</span><span class="p">(</span><span class="n">row_length</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_length</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="n">num_of_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">board_representation</span><span class="p">)</span>
+    <span class="n">row_length</span> <span class="o">=</span> <span class="n">num_of_rows</span>    <span class="c1">#rows == columns in a chessboard</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_of_rows</span><span class="p">):</span>
+        <span class="n">print_x_in_row</span><span class="p">(</span><span class="n">row_length</span><span class="p">,</span> <span class="n">board_representation</span><span class="p">[</span><span class="n">row</span><span class="p">])</span>
+
+    <span class="n">print_board_bottom</span><span class="p">(</span><span class="n">row_length</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># print the GA&#39;s best solution; a solution is valid only if there are no collisions</span>
+<span class="k">if</span> <span class="n">ga</span><span class="o">.</span><span class="n">best_individual</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ga</span><span class="o">.</span><span class="n">best_individual</span><span class="p">())</span>
+    <span class="n">print_board</span><span class="p">(</span><span class="n">ga</span><span class="o">.</span><span class="n">best_individual</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
-
-<h2 id="run-the-ga-program">Run the GA program<a class="headerlink" href="#run-the-ga-program" title="Permanent link">&para;</a></h2>
-<p>Run the Genetic Algorithm, Print the best solution, You can also examine all the individuals in the last generation.
-<div class="codehilite"><pre><span></span><span class="n">ga</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;the best indivudial : &quot;</span><span class="p">,</span> <span class="n">ga</span><span class="o">.</span><span class="n">best_individual</span><span class="p">())</span>
-
-<span class="k">for</span> <span class="n">individual</span> <span class="ow">in</span> <span class="n">ga</span><span class="o">.</span><span class="n">last_generation</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">individual</span><span class="p">)</span>
-</pre></div></p>
                 
                   
                 
@@ -882,7 +810,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../simplega/" title="simple GA algorithm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../pyeasyga/" title="pyeasyga" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -891,19 +819,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                simple GA algorithm
+                pyeasyga
               </span>
             </div>
           </a>
         
         
-          <a href="../queens/" title="8 queens" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../nn/" title="overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                8 queens
+                overview
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
