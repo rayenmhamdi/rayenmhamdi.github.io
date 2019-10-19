@@ -974,12 +974,12 @@
 
 
         <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">mutate_chromosome</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
-        <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">mutate_chromosome</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
+        <span class="n">GeneticAlgorithm</span><span class="o">.</span><span class="n">mutate_chromosome</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
+
+
+        <span class="n">new_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
 
         <span class="c1"># make sure to not depass the population size if we keep the elite</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">())</span> <span class="o">&lt;</span> <span class="n">POPULATION_SIZE</span><span class="p">:</span>
-            <span class="n">new_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
-
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">())</span> <span class="o">&lt;</span> <span class="n">POPULATION_SIZE</span><span class="p">:</span>
             <span class="n">new_pop</span><span class="o">.</span><span class="n">get_chromosomes</span><span class="p">()</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
 
