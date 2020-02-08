@@ -860,6 +860,19 @@
     Django users and authentication
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-example" title="authentication Example" class="md-nav__link">
+    authentication Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1054,6 +1067,19 @@
     Django users and authentication
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-example" title="authentication Example" class="md-nav__link">
+    authentication Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1142,6 +1168,8 @@
 <p>mkdir templates</p>
 </div>
 <div class="codehilite"><pre><span></span><span class="c1"># in settings.py</span>
+<span class="c1"># in TEMPLATES list</span>
+<span class="c1"># we must set the proprety DIRS like this</span>
 <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)]</span>
 </pre></div>
 
@@ -1359,6 +1387,7 @@ but the admin site need to be managed by a user, so we need our superadmin user<
 </pre></div>
 
 <h2 id="django-users-and-authentication">Django users and authentication<a class="headerlink" href="#django-users-and-authentication" title="Permanent link">&para;</a></h2>
+<p>here are some useful links for the users and authentication system</p>
 <ul>
 <li>Login_tutorial : <a href="https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/">https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/</a></li>
 <li>Login tutorial 2 : <a href="https://python.doctor/page-django-login-authentification-de-base-apprendre-creer-cours-tutoriel-python">https://python.doctor/page-django-login-authentification-de-base-apprendre-creer-cours-tutoriel-python</a></li>
@@ -1380,6 +1409,105 @@ but the admin site need to be managed by a user, so we need our superadmin user<
 </li>
 <li>customize the form object 2 : <a href="https://simpleisbetterthancomplex.com/article/2017/08/19/how-to-render-django-form-manually.html">https://simpleisbetterthancomplex.com/article/2017/08/19/how-to-render-django-form-manually.html</a></li>
 </ul>
+<h3 id="authentication-example">authentication Example<a class="headerlink" href="#authentication-example" title="Permanent link">&para;</a></h3>
+<p><strong>here a sample of code:</strong>
+our authentication system based on the user model of django</p>
+<p>if the user is_staff so he will be redirected to admin_portal,</p>
+<p>if the user is_not_staff he will be redirected to the club_portal</p>
+<p>first of all we need our routes</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span> <span class="c1"># route for the authentication page</span>
+
+  <span class="n">path</span><span class="p">(</span><span class="s1">&#39;club/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">club</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;club_portal&#39;</span><span class="p">),</span>  <span class="c1"># route for the club space</span>
+  <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">admin</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;admin_portal&#39;</span><span class="p">),</span> <span class="c1"># route for the admin space</span>
+
+  <span class="n">path</span><span class="p">(</span><span class="s1">&#39;login/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">login_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;login&#39;</span><span class="p">),</span> <span class="c1"># route for login</span>
+  <span class="n">path</span><span class="p">(</span><span class="s1">&#39;logout/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">logout_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;logout&#39;</span><span class="p">),</span> <span class="c1"># route for logout</span>
+<span class="p">]</span>
+</pre></div>
+
+<p>then we must code our views</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">authenticate</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">logout</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">:</span> <span class="c1"># we test if the user already authenticated</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_staff</span><span class="p">:</span> <span class="c1"># make redirection based on is_staff or not</span>
+      <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;admin_portal&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()))</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_staff</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;club_portal&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()))</span>
+  <span class="k">else</span><span class="p">:</span> <span class="c1"># if the user not authenticated, we must show him the login page</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;login.html&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">login_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="c1"># get the form params</span>
+  <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+  <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+  <span class="n">user</span> <span class="o">=</span> <span class="n">authenticate</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>   <span class="c1">#autheticate</span>
+  <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span> <span class="c1"># if the authetication goes well and the user is active</span>
+    <span class="n">login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span> <span class="c1"># do the login in django sytem</span>
+    <span class="c1"># make redirection based on user is_staff or not</span>
+    <span class="c1"># if is_staff --&gt; admin page</span>
+    <span class="c1"># if not is_staff --&gt; club page</span>
+    <span class="c1"># otherwise --&gt; login page</span>
+    <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">is_staff</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;admin_portal&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()))</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">is_staff</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;club_portal&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;login.html&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">logout_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="n">logout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;login.html&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">club</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;club.html&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">admin</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;admin.html&#39;</span><span class="p">)</span>
+</pre></div>
+
+<p>and finally our html pages
+<div class="codehilite"><pre><span></span><span class="c">&lt;!--login page--&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span>  <span class="na">role</span><span class="o">=</span><span class="s">&quot;form&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{% url &#39;login&#39; %}&quot;</span><span class="p">&gt;</span>
+{% csrf_token %}
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Utilisateur&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Mot de passe&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;login&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+
+
+<span class="c">&lt;!--club portal--&gt;</span>
+{% if user.is_authenticated and not user.is_staff %}
+  Hi {{ user.username }}!, you are a club
+  <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;logout&#39; %}&quot;</span><span class="p">&gt;</span>logout<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% else %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You are not logged in<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;index&#39; %}&quot;</span><span class="p">&gt;</span>login from here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% endif %}
+
+
+<span class="c">&lt;!--admin portal--&gt;</span>
+{% if user.is_authenticated and user.is_staff %}
+  Hi {{ user.username }}!, you are administrator
+  <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;logout&#39; %}&quot;</span><span class="p">&gt;</span>logout<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% else %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You are not logged in<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;index&#39; %}&quot;</span><span class="p">&gt;</span>login from here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% endif %}
+</pre></div></p>
                 
                   
                 
